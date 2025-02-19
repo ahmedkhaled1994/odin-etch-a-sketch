@@ -1,38 +1,42 @@
-.container {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+div#container {
     display: flex;
-    padding: 10px;
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
 }
 
 .row {
     display: flex;
-    flex: 1;
+    flex: 0 2 auto;
     justify-content: space-between;
-    width: 100%;
 }
 
 .cell {
-    flex: 1;
+    flex: 0 2 auto;
     text-align: center;
     height: 20px;
-    width: 20px;
+    width: 20px; 
+    border: 1px solid black;
 }
 
-.cell:hover {
+/*.cell:hover {
     background-color: lightgray;
-}
+}*/
 
-.btn-container{
+div#btn-container{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    border: 1px solid black;
+    margin: 30px 0;
 }
 .btn {
     flex: 1;

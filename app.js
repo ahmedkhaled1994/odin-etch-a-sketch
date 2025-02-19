@@ -27,11 +27,24 @@ function createGrid(gridSize) {
     for (let i=0; i < gridSize; i++) {
         let row = document.createElement('div');
         row.className = 'row';
+
         for (let j=0; j < gridSize; j++) {
-            let div = document.createElement('div');
-            div.classList = 'cell';
-            //div.innerText = j;
-            row.appendChild(div);
+            let cell = document.createElement('div');
+            cell.classList = 'cell';
+            cell.style.backgroundColor ='RGBA(0,0,0,0)';
+
+            function changeColor() {
+                let r = Math.floor(Math.random()*255);
+                let g = Math.floor(Math.random()*255);
+                let b = Math.floor(Math.random()*255);
+                let alpha = cell.style.backgroundColor.split(',')[3];
+                alpha =parseFloat(alpha) + 0.1;
+                cell.style.backgroundColor = 'RGBA(' + r + ',' + g + ',' + b + ',' + alpha;
+            }
+
+            cell.addEventListener('mouseover', changeColor);
+            cell.addEventListener('touchmove', changeColor);
+            row.appendChild(cell);
         }
         containerDiv.appendChild(row);
     }
