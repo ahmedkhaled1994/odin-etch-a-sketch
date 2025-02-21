@@ -27,10 +27,6 @@ div#container {
     border: 1px solid black;
 }
 
-/*.cell:hover {
-    background-color: lightgray;
-}*/
-
 div#btn-container{
     display: flex;
     justify-content: center;

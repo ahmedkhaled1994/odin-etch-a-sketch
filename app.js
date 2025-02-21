@@ -42,8 +42,16 @@ function createGrid(gridSize) {
                 cell.style.backgroundColor = 'RGBA(' + r + ',' + g + ',' + b + ',' + alpha;
             }
 
+            function preventScroll(event) {
+                event.preventDefault();
+            }
+
             cell.addEventListener('mouseover', changeColor);
+            cell.addEventListener('touchstart', changeColor);
             cell.addEventListener('touchmove', changeColor);
+            cell.addEventListener('touchstart', preventScroll);
+            cell.addEventListener('touchmove', preventScroll);
+            
             row.appendChild(cell);
         }
         containerDiv.appendChild(row);
